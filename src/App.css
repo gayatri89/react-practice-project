@@ -40,3 +40,14 @@
   color: bisque;
 }
 
+pre {
+  background-color: var(--code-background-block);
+  border: 1px solid transparent;
+  margin: 1rem 0 2rem;
+  padding: 1rem 2.5rem 1rem 1rem;
+}
+pre code {
+  background: none;
+  color: var(--text-primary);
+  padding: 0;
+}
