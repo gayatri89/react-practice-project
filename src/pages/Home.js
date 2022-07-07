@@ -1,120 +1,77 @@
-import { React } from "react";
-import { Grid, Container, Card, CardMedia, CardContent, Typography, CardActions, Box, Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { React, useState } from "react";
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import { Grid, Container, Card, CardMedia, CardContent, Typography, CardActions, Box } from '@mui/material';
+import { Link } from "react-router-dom";
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
 
 const Home = () => {
 
 
-    const [expanded, setExpanded] = React.useState(false);
-    const fruits = ['Apple','Banana','Orange','Strawberry','Cherry','Chikoo','Pinapple'];
-
-
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
-
-    //printing the array size
-    // console.log(fruits.length)
-
-    //conver array into string
-    // console.log(fruits.join(" | "))
-
-    //access the array value using index
-    // console.log(fruits[0],fruits[fruits.length - 2])
-
-    //Find the index of an item in an array 
-    // console.log(fruits.indexOf('Orange'))
-
-    //Append an item to an array
-    const newLength = fruits.push('Berry')
-    // console.log(fruits.length)
-    
-    // Remove the last item from an array
-    // const removedItem = fruits.pop()
-    // console.log(fruits)
-
-    const start = -2;
-    const removedItem = fruits.splice(start);
-    console.log(fruits);
-    console.log(removedItem)
-
     return(
-        <>
-            <h1>Array Practice</h1>
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            General settings
-          </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
-            You are currently not an owner
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-            varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-            laoreet.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            Advanced settings
-          </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
-            Filtering has been entirely disabled for whole web server
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal data</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-        </>
+        <Container fixed>
+
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={12} md={12}>
+                    <h1>Welcome to the Hello world</h1>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={6}>
+                    <Card>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://blog-www.pods.com/wp-content/uploads/2021/06/resized_FI_Getty_organized-closet.jpg"
+                            alt=""
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Array
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            This section provides some examples of common array operations in JavaScript.
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                        <Link to="/arr">Learn More</Link>
+                        </CardActions>
+                        </Card>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={6}>
+                    <Card>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://www.freecodecamp.org/news/content/images/2022/05/reactrouter6.png"
+                            alt=""
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            React Router v6 is Here
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            Closing in on a decade of client-side routing, React Router v6 takes the best features from previous versions—and its sister project, Reach Router—in our smallest and most powerful package yet.
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                        <Link to="react-router">Learn More</Link>
+                        </CardActions>
+                        </Card>
+                </Grid>
+
+                
+                    
+            </Grid>
+     
+        </Container>
     )
 }
 
