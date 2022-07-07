@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import News from './pages/News';
 import About from './pages/About';
 import NewsDetails from './pages/NewsDetails'
-
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element="" />
+        <Route path="/"  element={<Home/>} />
         <Route path="/About" element={<About/>} ></Route>
-        <Route path="/news" exact element={<News/>} ></Route>
+        <Route path="/news" element={<News/>} ></Route>
         <Route path="/news/:id" element={<NewsDetails/>} ></Route>
       </Routes>
     </div>
