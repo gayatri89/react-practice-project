@@ -12,10 +12,18 @@ import { useState } from 'react';
 
 function App() {
 
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
+  
   const handleChange = (event) => {
+    let msg;
       setChecked(event.target.checked);
-      console.log(checked);
+      if(checked === true) {
+        msg = "React - Light Mode";
+      } else {
+        msg = "React - Dark Mode";
+      }
+
+      document.title = msg;
     };
 
 
