@@ -8,12 +8,21 @@ import Home from './pages/Home';
 import ArrayFunc from './components/example-array/ArrayFunc';
 import Footer from './components/Footer';
 import TextForm from './components/TextForm';
+import { useState } from 'react';
 
 function App() {
+
+  const [checked, setChecked] = useState(true);
+  const handleChange = (event) => {
+      setChecked(event.target.checked);
+      console.log(checked);
+    };
+
+
   return (
     <BrowserRouter>
-    <div className="App">
-      <Nav />
+    <div className={`App ${checked === true ? `dark-body`: `light-body`}`} >
+      <Nav event={handleChange} mode={checked} />
 
       <Routes>
         <Route path="/"  element={<Home/>} />
@@ -26,7 +35,7 @@ function App() {
 
       </Routes>
 
-      <Footer />
+      <Footer mode={checked} />
     </div>
     </BrowserRouter>
   );

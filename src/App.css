@@ -58,3 +58,12 @@ pre code {
 textarea {
   width: 450px !important;
 }
+
+.dark-mode {
+  background: #1a1a2df0;
+  color: #fff;
+}
+
+.dark-body {
+  background-color: #29292a;
+}

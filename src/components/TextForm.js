@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import { Grid, Container, Button } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 export default function TextForm() {
+
     let [text, setText] = useState('');
+    const [formats, setFormats] = React.useState(() => ['bold', 'italic']);
+
     const handleUpperCase = () => {
         return setText(text.toUpperCase());
     }
@@ -21,39 +25,44 @@ export default function TextForm() {
         return setText(arr.join(" "));
     }
 
+    const handleFormat = (event, newFormats) => {
+      setFormats(newFormats);
+    };
+
   return (
-    <Container fixed>
+    <Container maxWidth="lg">
+ 
+            <Grid item xs={12} sm={12} md={12}>
+                <h1>Enter the text to analyze below</h1>
+            </Grid>
 
-    <Grid container spacing={2}>
-        <Grid item xs={12} sm={12} md={12}>
-            <h1>Enter the text to analyze below</h1>
-        </Grid>
-        <Grid item  xs={12} sm={12} md={12}>
-
-          <TextField
-          id="myText"
-          multiline
-          rows={4}
-          className="myText"
-          onChange={(e)=>setText(e.target.value)}
-          value={text}
-        />
+            <Grid item  xs={12} sm={12} md={12}>
+                <TextField
+                id="myText"
+                multiline
+                rows={4}
+                className="myText"
+                onChange={(e)=>setText(e.target.value)}
+                value={text}
+                />
         
-        <Grid item xs={12} sm={12} md={12}>
-            <h1>Your text summary</h1>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
-            <h2>Preview</h2>
-            <p>{text}</p>
-            <Button variant="contained" onClick={handleUpperCase}>UPPER CASE</Button>&nbsp;&nbsp;
-            <Button variant="contained" onClick={()=>setText(text.toLowerCase())} >lowercase</Button>&nbsp;&nbsp;
-            <Button variant="contained" onClick={handleSentenceCase}>Sentence case</Button>&nbsp;&nbsp;
-            <Button variant="contained" onClick={handleCapitalizedCase}>Capitalized case</Button>&nbsp;&nbsp;
-            <Button variant="contained" onClick={()=>setText('')}>Clear</Button>&nbsp;&nbsp;
-            <h1>&nbsp;</h1>
-        </Grid>
+                <Grid item  md={12}>
+                    <h1>Your text summary</h1>
+                    <p>{text.split(" ").length} words and {text.length} characters</p>
+                    <h2>Preview</h2>
+                    <p>{text}</p>
 
-        </Grid>
-    </Grid>
+                    <Stack direction="row" spacing={1}>
+                        <Button variant="contained" size="small" onClick={handleUpperCase}>UPPER CASE</Button>
+                        <Button variant="contained" size="small" onClick={()=>setText(text.toLowerCase())} >lowercase</Button>
+                        <Button variant="contained" size="small" onClick={handleSentenceCase}>Sentence case</Button>
+                        <Button variant="contained" size="small" onClick={handleCapitalizedCase}>Capitalized case</Button>
+                        <Button variant="contained" size="small" onClick={()=>setText('')}>Clear</Button>
+                    </Stack>
+                    <p>&nbsp;</p>
+                </Grid>
+            </Grid>
+
     </Container>
   )
 }
