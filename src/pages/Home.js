@@ -67,7 +67,28 @@ const Home = () => {
                         </Card>
                 </Grid>
 
-                
+                <Grid item xs={12} sm={6} md={6}>
+                    <Card>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xsu7mmil1ruzy6mmk1cs.png"
+                            alt=""
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            React Router v6 is Here
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            Closing in on a decade of client-side routing, React Router v6 takes the best features from previous versions—and its sister project, Reach Router—in our smallest and most powerful package yet.
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                        <Link to="exe">Learn More</Link>
+                        </CardActions>
+                        </Card>
+                </Grid>
+
                     
             </Grid>
      

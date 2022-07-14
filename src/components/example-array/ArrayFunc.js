@@ -51,7 +51,9 @@ const ArrayFunc = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>This section provides some examples of common array operations in JavaScript.
-                    <pre class="brush: js notranslate"><code><span class="token comment">// 'fruits' array created using array literal notation.</span>
+                    <pre class="brush: js notranslate">
+                        <code>
+                            <span class="token comment">// 'fruits' array created using array literal notation.</span>
 <span class="token keyword">const</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Apple'</span><span class="token punctuation">,</span> <span class="token string">'Banana'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fruits<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 2</span>
@@ -69,19 +71,43 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </Typography>
                 </AccordionDetails>
                 </Accordion>
-                <Accordion disabled>
+
+                <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <Typography>Accordion 2</Typography>
+                    <Typography>Create a string from an array</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                    </Typography>
+                    <Typography>This example uses the join() method to create a string from the fruits array.</Typography>
+                </AccordionDetails>
+                </Accordion>
+
+                <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel3a-header"
+                >
+                    <Typography>Access an array item by its index</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>This example uses the join() method to create a string from the fruits array.</Typography>
+                </AccordionDetails>
+                </Accordion>
+
+                <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel4a-header"
+                >
+                    <Typography>Find the index of an item in an array</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>This example uses the indexOf() method to find the position (index) of the string "Banana" in the fruits array.</Typography>
                 </AccordionDetails>
                 </Accordion>
 

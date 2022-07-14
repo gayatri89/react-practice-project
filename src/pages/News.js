@@ -16,7 +16,6 @@ const News = () => {
 
     const [brNews,setBrNews] = useState();
     const [stwNews,setStwNews] = useState();
-
    
     useEffect(()=>{
        fetchItems()

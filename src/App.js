@@ -7,6 +7,7 @@ import NewsDetails from './pages/NewsDetails'
 import Home from './pages/Home';
 import ArrayFunc from './components/example-array/ArrayFunc';
 import Footer from './components/Footer';
+import TextForm from './components/TextForm';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/news/:id" element={<NewsDetails/>} ></Route>
         <Route path="/arr" element={<ArrayFunc/>} ></Route>
         <Route path="/news" element={<Home/>} ></Route>
+        <Route path="/exe" element={<TextForm/>} ></Route>
 
       </Routes>
 
