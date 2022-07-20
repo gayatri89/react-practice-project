@@ -11,6 +11,9 @@ const Nav = (props) => {
             <ul className="menu-nav">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/about">My Skills</Link></li>
+                <li><Link to="/about">Work</Link></li>
+                <li><Link to="/about">Contact</Link></li>
                 <li><Link to="/news">News</Link></li>
                 <li>      
                     <Switch checked={props.mode} onChange={props.event} />

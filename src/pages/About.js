@@ -1,35 +1,46 @@
 import React from "react";
-import { Grid, Container, Card, CardMedia, CardContent, Typography, CardActions, Box } from '@mui/material';
-
+import { Grid, Container, Typography, Box } from '@mui/material';
+import profileImg from "../IMG_9853.jpeg";
+import Avatar from '@mui/material/Avatar';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemText from '@mui/material/ListItemText';
 const About = () => {
     return (
         <Container fixed>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={12}>
                     <h1>About</h1>
+                    
                 </Grid>
-                <Grid item xs={12} sm={6} md={6}>
+                <Grid item xs={12} sm={12} md={12}>
                     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Typography>
-                            What is Lorem Ipsum?
-
-                        </Typography>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
+                    <List åsx={{ width: '100%', bgcolor: 'background.paper' }} >
+                        <ListItem>
+                            <ListItemAvatar>
+                            <Avatar
+                                alt="Gayatri Rathva‚"
+                                src={profileImg}
+                                sx={{ width: 300, height: 300 }}
+                            />
+                            </ListItemAvatar>
+                            <ListItemText 
+                            primary={<>
+                                <Typography variant="h5">Hi, I am web developer</Typography>
+                            </>} 
+                            secondary={
+                                <>
+                                <Typography variant="h6">Front End Developer / Wordpress Expert</Typography>
+                                </>
+                            }/>
+                        </ListItem>
+                     </List>   
+                    
+                    
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6}>
-                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Typography>
-                            What is Lorem Ipsum?
-
-                        </Typography>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                    </Box>
-                </Grid>
+              
             </Grid>
         </Container>
     )

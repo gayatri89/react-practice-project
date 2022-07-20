@@ -1,5 +1,5 @@
-import { React, useState } from "react";
-import { Grid, Container, Card, CardMedia, CardContent, Typography, CardActions, Box, Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
+import { React } from "react";
+import { Container, Typography, Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const ArrayFunc = () => {
